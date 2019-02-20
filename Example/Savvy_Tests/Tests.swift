@@ -8,10 +8,7 @@ class Tests: QuickSpec {
     override func spec() {
         beforeEach {
             Savvy.shared.shouldUseTestNet = true
-            Savvy.shared.setToken("")
-            
-            // Set private token for testing user
-            // LoginHelper.shared.store(token: Secrets.token)
+            Savvy.shared.setToken("tpub801c5d843605cb5f0e9b5e7ad64cc866")
         }
         
         describe("fetch currencies") {

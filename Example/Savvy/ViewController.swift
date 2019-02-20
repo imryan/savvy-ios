@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     private var demoFiats: [String] = ["usd", "eur", "cad", "rub"]
     private var currentFiat: String = "usd"
     private var fiatBarButtonItem: UIBarButtonItem!
+    private var paymentRequestQRImageView: UIImageView = UIImageView()
     private var currencies: [CryptoCurrency] = []
     private var rates: [MarketRate] = []
     
@@ -33,11 +34,18 @@ class ViewController: UIViewController {
                                             target: self, action: #selector(didChangeFiat))
         
         self.navigationItem.rightBarButtonItem = fiatBarButtonItem
+        
+        paymentRequestQRImageView.isHidden = true
+        
+        view.addSubview(paymentRequestQRImageView)
+        paymentRequestQRImageView.translatesAutoresizingMaskIntoConstraints = false
+        paymentRequestQRImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        paymentRequestQRImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
     private func setupSavvy() {
         Savvy.shared.shouldUseTestNet = true
-        Savvy.shared.setToken("")
+        Savvy.shared.setToken("tpub801c5d843605cb5f0e9b5e7ad64cc866")
     }
     
     private func fetchCurrencies() {
@@ -75,12 +83,7 @@ class ViewController: UIViewController {
                                          address: "1MBZLCRWCYUH9X9H6rTFZ38KpNwCPxB5Yv",
                                          message: "Gimme the money Ton", size: nil, completion: { (image) in
                                             
-                                            let imageView = UIImageView(image: image)
-                                            imageView.translatesAutoresizingMaskIntoConstraints = false
-                                            self.view.addSubview(imageView)
-                                            
-                                            imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-                                            imageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+                                            self.showPaymentQRImage(image)
         })
     }
     
@@ -90,6 +93,11 @@ class ViewController: UIViewController {
             self.tableView.reloadSections([0, 1], with: .automatic)
             self.tableView.endUpdates()
         }
+    }
+    
+    private func showPaymentQRImage(_ image: UIImage?) {
+        paymentRequestQRImageView.image = image
+        paymentRequestQRImageView.isHidden = false
     }
     
     // MARK: - Actions
@@ -108,10 +116,10 @@ class ViewController: UIViewController {
         getMarketRates()
     }
     
-    // MARK: - Touches
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // dismiss imageView
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !paymentRequestQRDismissButton.isHidden {
+            paymentRequestQRImageView.isHidden = true
+        }
     }
     
     // MARK: - Lifecycle
@@ -136,41 +144,39 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellId", for: indexPath)
-        
-        if indexPath.section == 0 {
-            if indexPath.row < currencies.count {
-                let currency = currencies[indexPath.row]
-                cell.textLabel?.text = currency.title ?? "N/A"
-                cell.detailTextLabel?.text = "\(currency.rate ?? 0.0)"
-                cell.selectionStyle = .none
+        if indexPath.section == 0 || indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CellId", for: indexPath)
+            cell.selectionStyle = .none
+            
+            if indexPath.section == 0 {
+                if indexPath.row < currencies.count {
+                    let currency = currencies[indexPath.row]
+                    cell.textLabel?.text = currency.title ?? "N/A"
+                    cell.detailTextLabel?.text = "\(currency.rate ?? 0.0)"
+                    cell.selectionStyle = .none
+                }
             }
-        }
-        else if indexPath.section == 1 {
-            if indexPath.row < rates.count {
-                let rate = rates[indexPath.row]
-                cell.textLabel?.text = rate.name ?? "N/A"
-                cell.detailTextLabel?.text = "\(rate.mid ?? 0.0)"
-                cell.selectionStyle = .none
+            else if indexPath.section == 1 {
+                if indexPath.row < rates.count {
+                    let rate = rates[indexPath.row]
+                    cell.textLabel?.text = rate.name ?? "N/A"
+                    cell.detailTextLabel?.text = "\(rate.mid ?? 0.0)"
+                    cell.selectionStyle = .none
+                }
             }
-        }
-        else if indexPath.section == 2 {
-            cell.textLabel?.text = "FUCK"
+            
+            return cell
         }
         
-//        if indexPath.section == 2 {
-//            cell.selectionStyle = .default
-//            cell.accessoryType = .disclosureIndicator
-//
-//            if indexPath.row == 0 {
-//                cell.textLabel?.text = "Create Payment Request"
-//            }
-//            else {
-//                cell.textLabel?.text = "Get Payment Request QR"
-//            }
-//        }
+        let selectableCell = tableView.dequeueReusableCell(withIdentifier: "SelectableCellId", for: indexPath)
+        if indexPath.row == 0 {
+            selectableCell.textLabel?.text = "Create Payment Request"
+        }
+        else {
+            selectableCell.textLabel?.text = "Get Payment Request QR"
+        }
         
-        return cell
+        return selectableCell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
