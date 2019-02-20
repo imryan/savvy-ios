@@ -1,6 +1,8 @@
 # OS X
 .DS_Store
 
+Pods/
+Build/
 # Xcode
 build/
 *.pbxuser

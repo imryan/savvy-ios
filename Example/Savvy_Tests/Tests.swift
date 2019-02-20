@@ -7,9 +7,8 @@ class Tests: QuickSpec {
     
     override func spec() {
         beforeEach {
-            // Public token. Easy there wise guy
             Savvy.shared.shouldUseTestNet = true
-            Savvy.shared.setToken("tpub801c5d843605cb5f0e9b5e7ad64cc866")
+            Savvy.shared.setToken("")
             
             // Set private token for testing user
             // LoginHelper.shared.store(token: Secrets.token)
