@@ -10,7 +10,7 @@ open class Savvy {
     
     // MARK: - Currencies
     
-    public enum SavvyCryptoCurrencyType: String {
+    public enum SavvyCryptoCurrencyType {
         case btc
         case bch
         case etc
@@ -18,7 +18,28 @@ open class Savvy {
         case ltc
         case btg
         case dash
-        //case erc20(type: String)
+        case erc20(symbol: String)
+        
+        var rawValue: String {
+            switch self {
+            case .btc:
+                return "btc"
+            case .bch:
+                return "bch"
+            case .etc:
+                return "etc"
+            case .eth:
+                return "eth"
+            case .ltc:
+                return "ltc"
+            case .btg:
+                return "btg"
+            case .dash:
+                return "dash"
+            case .erc20(let symbol):
+                return "erc20:\(symbol)"
+            }
+        }
     }
     
     // MARK: - Attributes
@@ -56,6 +77,7 @@ open class Savvy {
     ///
     /// - Parameters:
     ///   - fiat: Fiat currency type (usd, eur, rub, etc)
+    ///   - date: Optional parameter to get rate on specific date
     ///   - crypto: Cryptocurrency type
     ///   - completion: Array of `Rate` objects or an `Error`
     open func getMarketRates(fiat: String, date: Date? = nil, completion: @escaping Callbacks.GetMarketRates) {
@@ -66,6 +88,7 @@ open class Savvy {
     ///
     /// - Parameters:
     ///   - fiat: Fiat currency type (usd, eur, rub, etc)
+    ///   - date: Optional parameter to get rate on specific date
     ///   - crypto: Cryptocurrency type
     ///   - completion: `Rate` object or an `Error`
     open func getSingleMarketRate(fiat: String, date: Date? = nil, crypto: SavvyCryptoCurrencyType,

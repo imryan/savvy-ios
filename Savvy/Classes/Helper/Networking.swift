@@ -154,7 +154,7 @@ extension Networking {
         if tokenExists() && needsAuth {
             url.append("?token=\(Savvy.shared.token!)")
         }
-
+        
         Alamofire.request(url, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response) in
             switch response.result {
             case .success(let json):

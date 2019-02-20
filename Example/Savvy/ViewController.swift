@@ -59,7 +59,7 @@ class ViewController: UIViewController {
     }
     
     private func createPaymentRequest() {
-        Savvy.shared.createPaymentRequest(crypto: .btc, callbackURL: "") { (request, error) in
+        Savvy.shared.createPaymentRequest(crypto: .erc20(symbol: "dai"), callbackURL: "") { (request, error) in
             if let request = request {
                 let message = "Created payment request to:\n\(request.address ?? "N/A")\nInvoice: #\(request.invoice ?? "N/A")."
                 let alert = UIAlertController(title: "Payment Request", message: message, preferredStyle: .alert)
@@ -155,18 +155,7 @@ extension ViewController: UITableViewDataSource {
             }
         }
         else if indexPath.section == 2 {
-            cell.selectionStyle = .default
-            cell.accessoryType = .disclosureIndicator
             cell.textLabel?.text = "FUCK"
-            
-            if indexPath.row == 0 {
-                cell.textLabel?.text = "Create Payment Request"
-            }
-            else {
-                cell.textLabel?.text = "Get Payment Request QR"
-            }
-            
-            return cell
         }
         
 //        if indexPath.section == 2 {
