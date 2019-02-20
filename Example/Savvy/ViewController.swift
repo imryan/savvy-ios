@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     }
     
     private func createPaymentRequest() {
-        Savvy.shared.createPaymentRequest(crypto: .erc20(symbol: "dai"), callbackURL: "") { (request, error) in
+        Savvy.shared.createPaymentRequest(crypto: .btc, callbackURL: "") { (request, error) in
             if let request = request {
                 let message = "Created payment request to:\n\(request.address ?? "N/A")\nInvoice: #\(request.invoice ?? "N/A")."
                 let alert = UIAlertController(title: "Payment Request", message: message, preferredStyle: .alert)
@@ -148,21 +148,15 @@ extension ViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CellId", for: indexPath)
             cell.selectionStyle = .none
             
-            if indexPath.section == 0 {
-                if indexPath.row < currencies.count {
-                    let currency = currencies[indexPath.row]
-                    cell.textLabel?.text = currency.title ?? "N/A"
-                    cell.detailTextLabel?.text = "\(currency.rate ?? 0.0)"
-                    cell.selectionStyle = .none
-                }
+            if indexPath.section == 0, indexPath.row < currencies.count {
+                let currency = currencies[indexPath.row]
+                cell.textLabel?.text = currency.title ?? "N/A"
+                cell.detailTextLabel?.text = "$\(currency.rate ?? 0.0)"
             }
-            else if indexPath.section == 1 {
-                if indexPath.row < rates.count {
-                    let rate = rates[indexPath.row]
-                    cell.textLabel?.text = rate.name ?? "N/A"
-                    cell.detailTextLabel?.text = "\(rate.mid ?? 0.0)"
-                    cell.selectionStyle = .none
-                }
+            else if indexPath.section == 1, indexPath.row < rates.count {
+                let rate = rates[indexPath.row]
+                cell.textLabel?.text = rate.name ?? "N/A"
+                cell.detailTextLabel?.text = "\(rate.mid ?? 0.0)"
             }
             
             return cell

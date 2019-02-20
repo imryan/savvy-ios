@@ -100,7 +100,7 @@
                         <color key="tintColor" red="0.34509803919999998" green="0.40784313729999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19"/>
                             <color key="textColor" red="0.34509803921568627" green="0.40784313725490196" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
