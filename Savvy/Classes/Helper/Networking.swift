@@ -80,7 +80,8 @@ class Networking {
             }
 
             if let rateData = try? JSONSerialization.data(withJSONObject: dict, options: []) {
-                if let rate = try? JSONDecoder().decode(MarketRate.self, from: rateData) {
+                if var rate = try? JSONDecoder().decode(MarketRate.self, from: rateData) {
+                    rate.name = crypto
                     completion(rate, nil)
                     return
                 }
