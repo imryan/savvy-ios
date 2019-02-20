@@ -8,9 +8,9 @@
 import Foundation
 
 public struct MarketRate: Codable {
-    
+
     // MARK: - Attributes
-    
+
     public var name: String?
     public let poloniex: Double?
     public let hitbtc: Double?
@@ -18,7 +18,7 @@ public struct MarketRate: Codable {
     public let bitfinex: Double?
     public let messari: Double?
     public let mid: Double?
-    
+
     private enum CodingKeys: CodingKey {
         case name
         case poloniex
