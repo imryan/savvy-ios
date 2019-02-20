@@ -18,9 +18,6 @@ public struct Constants {
     /// API testnet base URL
     static let API_BASE_URL_TEST = "https://api.test.savvy.io/\(API_VERSION)"
 
-    /// Members API base URL
-    static let API_MEMBERS_BASE_URL = "https://member.savvy.io"
-
     /// Use regular base URL or testnet URL
     static var currentBaseURL: String {
         return Networking.shouldUseTestNet ? API_BASE_URL_TEST : API_BASE_URL
