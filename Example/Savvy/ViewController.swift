@@ -117,7 +117,7 @@ class ViewController: UIViewController {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if !paymentRequestQRDismissButton.isHidden {
+        if !paymentRequestQRImageView.isHidden {
             paymentRequestQRImageView.isHidden = true
         }
     }
