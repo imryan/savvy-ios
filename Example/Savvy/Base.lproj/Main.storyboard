@@ -77,7 +77,7 @@
                             <constraint firstItem="6G8-Wa-tCp" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="4Dx-sX-NdV"/>
                             <constraint firstAttribute="trailing" secondItem="6G8-Wa-tCp" secondAttribute="trailing" id="5sz-6k-OZ1"/>
                             <constraint firstItem="6G8-Wa-tCp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="C32-lj-qxY"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6G8-Wa-tCp" secondAttribute="bottom" id="CBY-lw-axH"/>
+                            <constraint firstAttribute="bottom" secondItem="6G8-Wa-tCp" secondAttribute="bottom" id="CBY-lw-axH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Savvy" id="Ldu-et-8yn"/>
