@@ -7,29 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		276474AD1911EB39BF7742C2 /* Pods_Savvy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9E22C641FADE49A2470208 /* Pods_Savvy_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		B7A7A99AD13F3E58A29B99AC /* Pods_Savvy_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE90C1D8DCFF627CD96F3AE4 /* Pods_Savvy_Tests.framework */; };
+		943B6FCD221DC50E001DEDCC /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B6FCC221DC50E001DEDCC /* Tests.swift */; };
+		FF41161F9F8E0DBE5A98811F /* Pods_Savvy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E726D40F77B966809AD6F8D9 /* Pods_Savvy_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
+		943B6FCF221DC50E001DEDCC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
-			remoteInfo = Savvy;
+			remoteInfo = Savvy_Example;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		263414B0E0104EE33AD9B36B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		4D9E22C641FADE49A2470208 /* Pods_Savvy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Savvy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		263414B0E0104EE33AD9B36B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Savvy_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Savvy_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,16 +35,14 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* Savvy_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Savvy_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		62DD049D597A0710D4ED1491 /* Savvy.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Savvy.podspec; path = ../Savvy.podspec; sourceTree = "<group>"; };
-		7643E4823FD163E19EE72A5D /* Pods-Savvy_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savvy_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Savvy_Tests/Pods-Savvy_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		9289D9101163D0A4681C4D6F /* Pods-Savvy_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savvy_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		AED3D4D4BD05A4D5E0560DB8 /* Pods-Savvy_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savvy_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Savvy_Tests/Pods-Savvy_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		BBB3D68F28582618B3FC7ED9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		CE90C1D8DCFF627CD96F3AE4 /* Pods_Savvy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Savvy_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E372440411C94D2AB5FC1A34 /* Pods-Savvy_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savvy_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example.release.xcconfig"; sourceTree = "<group>"; };
+		62DD049D597A0710D4ED1491 /* Savvy.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Savvy.podspec; path = ../Savvy.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		943B6FCA221DC50D001DEDCC /* Savvy_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Savvy_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		943B6FCC221DC50E001DEDCC /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		943B6FCE221DC50E001DEDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBB3D68F28582618B3FC7ED9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DC6887E428CE83E61C5C6372 /* Pods-Savvy_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savvy_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example.release.xcconfig"; sourceTree = "<group>"; };
+		E726D40F77B966809AD6F8D9 /* Pods_Savvy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Savvy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F81724FA6F25B220512C41CD /* Pods-Savvy_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savvy_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,30 +50,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				276474AD1911EB39BF7742C2 /* Pods_Savvy_Example.framework in Frameworks */,
+				FF41161F9F8E0DBE5A98811F /* Pods_Savvy_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		607FACE21AFB9204008FA782 /* Frameworks */ = {
+		943B6FC7221DC50D001DEDCC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7A7A99AD13F3E58A29B99AC /* Pods_Savvy_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A496EC9EA1CC0BE659B2BDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F81724FA6F25B220512C41CD /* Pods-Savvy_Example.debug.xcconfig */,
+				DC6887E428CE83E61C5C6372 /* Pods-Savvy_Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for Savvy */,
-				607FACE81AFB9204008FA782 /* Tests */,
+				943B6FCB221DC50E001DEDCC /* Savvy_Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				ED0DAD028E69ADE5E44987DC /* Pods */,
-				7D266E8D6A5D6E4CC97FD627 /* Frameworks */,
+				2A496EC9EA1CC0BE659B2BDC /* Pods */,
+				7AB73B2B4338783646709FBA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* Savvy_Example.app */,
-				607FACE51AFB9204008FA782 /* Savvy_Tests.xctest */,
+				943B6FCA221DC50D001DEDCC /* Savvy_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,23 +116,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		607FACE81AFB9204008FA782 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
-				607FACE91AFB9204008FA782 /* Supporting Files */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		607FACE91AFB9204008FA782 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				607FACEA1AFB9204008FA782 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,24 +126,21 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		7D266E8D6A5D6E4CC97FD627 /* Frameworks */ = {
+		7AB73B2B4338783646709FBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4D9E22C641FADE49A2470208 /* Pods_Savvy_Example.framework */,
-				CE90C1D8DCFF627CD96F3AE4 /* Pods_Savvy_Tests.framework */,
+				E726D40F77B966809AD6F8D9 /* Pods_Savvy_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		ED0DAD028E69ADE5E44987DC /* Pods */ = {
+		943B6FCB221DC50E001DEDCC /* Savvy_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9289D9101163D0A4681C4D6F /* Pods-Savvy_Example.debug.xcconfig */,
-				E372440411C94D2AB5FC1A34 /* Pods-Savvy_Example.release.xcconfig */,
-				7643E4823FD163E19EE72A5D /* Pods-Savvy_Tests.debug.xcconfig */,
-				AED3D4D4BD05A4D5E0560DB8 /* Pods-Savvy_Tests.release.xcconfig */,
+				943B6FCC221DC50E001DEDCC /* Tests.swift */,
+				943B6FCE221DC50E001DEDCC /* Info.plist */,
 			);
-			name = Pods;
+			path = Savvy_Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,11 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Savvy_Example" */;
 			buildPhases = (
-				2D15E897E43F12709245FE53 /* [CP] Check Pods Manifest.lock */,
+				C15B6A1FF1CDF2980D110035 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				D28018E6C50B47BDE37787EB /* [CP] Embed Pods Frameworks */,
+				8719639A3760E17753D7F8A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,24 +165,22 @@
 			productReference = 607FACD01AFB9204008FA782 /* Savvy_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		607FACE41AFB9204008FA782 /* Savvy_Tests */ = {
+		943B6FC9221DC50D001DEDCC /* Savvy_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Savvy_Tests" */;
+			buildConfigurationList = 943B6FD3221DC50E001DEDCC /* Build configuration list for PBXNativeTarget "Savvy_Tests" */;
 			buildPhases = (
-				1CACEDA8AAFA22D4F7369CA5 /* [CP] Check Pods Manifest.lock */,
-				607FACE11AFB9204008FA782 /* Sources */,
-				607FACE21AFB9204008FA782 /* Frameworks */,
-				607FACE31AFB9204008FA782 /* Resources */,
-				5DEB35B672767E3C13578898 /* [CP] Embed Pods Frameworks */,
+				943B6FC6221DC50D001DEDCC /* Sources */,
+				943B6FC7221DC50D001DEDCC /* Frameworks */,
+				943B6FC8221DC50D001DEDCC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
+				943B6FD0221DC50E001DEDCC /* PBXTargetDependency */,
 			);
 			name = Savvy_Tests;
-			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* Savvy_Tests.xctest */;
+			productName = Savvy_Tests;
+			productReference = 943B6FCA221DC50D001DEDCC /* Savvy_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -207,17 +189,19 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Manual;
 					};
-					607FACE41AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+					943B6FC9221DC50D001DEDCC = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 7V9G5R9AT4;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -236,7 +220,7 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* Savvy_Example */,
-				607FACE41AFB9204008FA782 /* Savvy_Tests */,
+				943B6FC9221DC50D001DEDCC /* Savvy_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -252,7 +236,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		607FACE31AFB9204008FA782 /* Resources */ = {
+		943B6FC8221DC50D001DEDCC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -262,7 +246,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1CACEDA8AAFA22D4F7369CA5 /* [CP] Check Pods Manifest.lock */ = {
+		8719639A3760E17753D7F8A1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,21 +254,23 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Savvy/Savvy.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Savvy_Tests-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Savvy.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D15E897E43F12709245FE53 /* [CP] Check Pods Manifest.lock */ = {
+		C15B6A1FF1CDF2980D110035 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,52 +292,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5DEB35B672767E3C13578898 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Savvy_Tests/Pods-Savvy_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Savvy_Tests/Pods-Savvy_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D28018E6C50B47BDE37787EB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Savvy/Savvy.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Savvy.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -364,21 +304,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		607FACE11AFB9204008FA782 /* Sources */ = {
+		943B6FC6221DC50D001DEDCC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				943B6FCD221DC50E001DEDCC /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
+		943B6FD0221DC50E001DEDCC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* Savvy_Example */;
-			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+			targetProxy = 943B6FCF221DC50E001DEDCC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -503,14 +443,18 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9289D9101163D0A4681C4D6F /* Pods-Savvy_Example.debug.xcconfig */;
+			baseConfigurationReference = F81724FA6F25B220512C41CD /* Pods-Savvy_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Savvy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -518,55 +462,78 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E372440411C94D2AB5FC1A34 /* Pods-Savvy_Example.release.xcconfig */;
+			baseConfigurationReference = DC6887E428CE83E61C5C6372 /* Pods-Savvy_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Savvy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
-		607FACF31AFB9204008FA782 /* Debug */ = {
+		943B6FD1221DC50E001DEDCC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7643E4823FD163E19EE72A5D /* Pods-Savvy_Tests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7V9G5R9AT4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Savvy_Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "exposed.ryans.Savvy-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Savvy_Example.app/Savvy_Example";
 			};
 			name = Debug;
 		};
-		607FACF41AFB9204008FA782 /* Release */ = {
+		943B6FD2221DC50E001DEDCC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AED3D4D4BD05A4D5E0560DB8 /* Pods-Savvy_Tests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7V9G5R9AT4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Savvy_Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "exposed.ryans.Savvy-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Savvy_Example.app/Savvy_Example";
 			};
 			name = Release;
@@ -592,11 +559,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Savvy_Tests" */ = {
+		943B6FD3221DC50E001DEDCC /* Build configuration list for PBXNativeTarget "Savvy_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				607FACF31AFB9204008FA782 /* Debug */,
-				607FACF41AFB9204008FA782 /* Release */,
+				943B6FD1221DC50E001DEDCC /* Debug */,
+				943B6FD2221DC50E001DEDCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

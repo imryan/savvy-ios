@@ -1,0 +1,6 @@
+framework module Savvy {
+  umbrella header "Savvy-umbrella.h"
+
+  export *
+  module * { export * }
+}

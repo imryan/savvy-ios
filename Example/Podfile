@@ -3,10 +3,11 @@ use_frameworks!
 target 'Savvy_Example' do
   pod 'Savvy', :path => '../'
 
-  target 'Savvy_Tests' do
-    inherit! :search_paths
-
-    pod 'Quick', '~> 1.2.0'
-    pod 'Nimble', '~> 7.0.2'
-  end
+#  target 'Savvy_Tests' do
+#    inherit! :search_paths
+#    
+#pod 'Savvy', :path => '../'
+#    pod 'Quick'
+#    pod 'Nimble'
+#  end
 end

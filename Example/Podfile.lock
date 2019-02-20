@@ -1,0 +1,23 @@
+PODS:
+  - Alamofire (4.8.1)
+  - Savvy (0.1.0):
+    - Alamofire
+
+DEPENDENCIES:
+  - Savvy (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+
+EXTERNAL SOURCES:
+  Savvy:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Savvy: c71a1ce18b1cccb38a0d6477c3731add16014ee7
+
+PODFILE CHECKSUM: 4af5dbc119f1adec6d792de5285c36f15a23711f
+
+COCOAPODS: 1.5.3

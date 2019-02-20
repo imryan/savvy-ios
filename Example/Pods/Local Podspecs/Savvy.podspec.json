@@ -1,0 +1,28 @@
+{
+  "name": "Savvy",
+  "version": "0.1.0",
+  "summary": "A short description of Savvy.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/imryan/Savvy",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "imryan": "notryancohen@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/imryan/Savvy.git",
+    "tag": "0.1.0"
+  },
+  "social_media_url": "https://twitter.com/ryancohen",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "Savvy/Classes/**/*",
+  "dependencies": {
+    "Alamofire": [
+
+    ]
+  }
+}
