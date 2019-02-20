@@ -1,6 +1,6 @@
 //
 //  LoginHelper.swift
-//  paybear-ios
+//  Savvy iOS
 //
 //  Created by Ryan Cohen on 3/2/18.
 //

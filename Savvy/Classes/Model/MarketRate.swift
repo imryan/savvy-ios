@@ -16,6 +16,7 @@ public struct MarketRate: Codable {
     public let hitbtc: Double?
     public let bittrex: Double?
     public let bitfinex: Double?
+    public let messari: Double?
     public let mid: Double?
     
     private enum CodingKeys: CodingKey {
@@ -24,6 +25,7 @@ public struct MarketRate: Codable {
         case hitbtc
         case bittrex
         case bitfinex
+        case messari
         case mid
     }
 }

@@ -9,6 +9,12 @@ import Foundation
 
 public struct CryptoCurrency: Codable {
     
+    // TODO: ERC20 token parsing + contract_address
+    //    "erc20:dai": {
+    //    "title": "Dai Stablecoin v1.0",
+    //    "code": "DAI",
+    //    "contract_address": "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359",
+    
     // MARK: - Attributes
     
     public let title: String?
@@ -20,8 +26,9 @@ public struct CryptoCurrency: Codable {
     public let maxConfirmations: Int?
     public let metamask: Bool?
     public let blockExplorer: String?
+    public let contractAddress: String?
     
-    private enum CodingKeys: CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case title
         case code
         case rate
@@ -31,24 +38,6 @@ public struct CryptoCurrency: Codable {
         case maxConfirmations
         case metamask
         case blockExplorer
-    }
-}
-
-// MARK: - Extensions
-
-extension CryptoCurrency {
-    
-    public func blockExplorerURLString() -> String? {
-        guard let user = Savvy.shared.currentUser,
-            let blockExplorer = blockExplorer,
-            let code = code else { return nil }
-        
-        if let wallet = user.wallets.filter({ $0.name?.uppercased() == code.uppercased() }).first,
-            let address = wallet.address {
-        
-            return blockExplorer.replacingOccurrences(of: "%s", with: address)
-        }
-        
-        return nil
+        case contractAddress = "contract_address"
     }
 }

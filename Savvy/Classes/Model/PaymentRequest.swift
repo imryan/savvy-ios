@@ -1,6 +1,6 @@
 //
 //  PaymentRequest.swift
-//  Paybear iOS
+//  Savvy iOS
 //
 //  Created by Ryan Cohen on 2/24/18.
 //

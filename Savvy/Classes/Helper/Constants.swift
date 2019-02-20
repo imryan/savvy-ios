@@ -16,7 +16,7 @@ public struct Constants {
     static let API_BASE_URL = "https://api.savvy.io/\(API_VERSION)"
     
     /// API testnet base URL
-    static let API_BASE_URL_TEST = "api.test.savvy.io/\(API_VERSION)"
+    static let API_BASE_URL_TEST = "https://api.test.savvy.io/\(API_VERSION)"
     
     /// Members API base URL
     static let API_MEMBERS_BASE_URL = "https://member.savvy.io"

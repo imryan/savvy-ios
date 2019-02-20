@@ -8,12 +8,6 @@
 import Foundation
 import Alamofire
 
-public protocol TwoFactorAuthProtocol {
-    
-    /// Called by `twoFactorDelegate` after login to enter required 2FA code
-    func paybearDidRequestTwoFactorAuthentication()
-}
-
 class Networking {
     
     // MARK: - Attributes
@@ -23,14 +17,12 @@ class Networking {
     // MARK: - Requests
     
     static func getCurrencies(_ completion: @escaping Callbacks.GetCurrencies) {
-        if !tokenExists() {
+        guard tokenExists() else {
             completion(nil, error("Missing API key.", code: -1))
             return
         }
         
-        let endpoint = "currencies"
-        get(endpoint) { (dict, error) in
-            // [String : [String : Any]]
+        get("currencies") { (dict, error) in
             guard let dict = dict as? [String : [String : Any]], error == nil else {
                 completion(nil, error)
                 return
@@ -38,9 +30,10 @@ class Networking {
             
             var currencies: [CryptoCurrency] = []
             dict.forEach({ (key, val) in
-                let currencyData = try? JSONSerialization.data(withJSONObject: val, options: [])
-                if let currency = try? JSONDecoder().decode(CryptoCurrency.self, from: currencyData!) {
-                    currencies.append(currency)
+                if let currencyData = try? JSONSerialization.data(withJSONObject: val, options: []) {
+                    if let currency = try? JSONDecoder().decode(CryptoCurrency.self, from: currencyData) {
+                        currencies.append(currency)
+                    }
                 }
             })
             
@@ -48,13 +41,13 @@ class Networking {
         }
     }
     
-    static func getMarketRates(fiat: String, completion: @escaping Callbacks.GetMarketRates) {
-        //        date    The date in ISO format, e.g. 2018‑06‑30
-        //        time    The time in UNIX format, e.g. 1530780455
-        //        date=\()&time=\() OPTIONAL PARAMS
+    static func getMarketRates(fiat: String, date: Date? = nil, completion: @escaping Callbacks.GetMarketRates) {
+        var url = "exchange/\(fiat)/rate"
+        if let date = date {
+            url.append("?time=\(Int(date.timeIntervalSince1970))")
+        }
         
-        let endpoint = "exchange/\(fiat)/rate"
-        get(endpoint) { (dict, error) in
+        get(url, needsAuth: false) { (dict, error) in
             guard let dict = dict as? [String : [String : Any]], error == nil else {
                 completion(nil, error)
                 return
@@ -62,10 +55,11 @@ class Networking {
             
             var rates: [MarketRate] = []
             dict.forEach({ (key, val) in
-                let rateData = try? JSONSerialization.data(withJSONObject: val, options: [])
-                if var rate = try? JSONDecoder().decode(MarketRate.self, from: rateData!) {
-                    rate.name = key
-                    rates.append(rate)
+                if let rateData = try? JSONSerialization.data(withJSONObject: val, options: []) {
+                    if var rate = try? JSONDecoder().decode(MarketRate.self, from: rateData) {
+                        rate.name = key
+                        rates.append(rate)
+                    }
                 }
             })
             
@@ -73,20 +67,26 @@ class Networking {
         }
     }
     
-    static func getSingleMarketRate(fiat: String, crypto: String, completion: @escaping Callbacks.GetMarketRateSingle) {
-        let endpoint = "\(crypto)/exchange/\(fiat)/rate"
-        get(endpoint) { (dict, error) in
+    static func getSingleMarketRate(fiat: String, date: Date? = nil, crypto: String, completion: @escaping Callbacks.GetMarketRateSingle) {
+        var url = "\(crypto)/exchange/\(fiat)/rate"
+        if let date = date {
+            url.append("?time=\(Int(date.timeIntervalSince1970))")
+        }
+        
+        get(url, needsAuth: false) { (dict, error) in
             guard let dict = dict, error == nil else {
                 completion(nil, error)
                 return
             }
             
-            let rateData = try? JSONSerialization.data(withJSONObject: dict, options: [])
-            if let rate = try? JSONDecoder().decode(MarketRate.self, from: rateData!) {
-                completion(rate, nil)
-            } else {
-                completion(nil, error)
+            if let rateData = try? JSONSerialization.data(withJSONObject: dict, options: []) {
+                if let rate = try? JSONDecoder().decode(MarketRate.self, from: rateData) {
+                    completion(rate, nil)
+                    return
+                }
             }
+            
+            completion(nil, error)
         }
     }
     
@@ -96,180 +96,62 @@ class Networking {
             return
         }
         
-        let endpoint = "\(crypto)/payment/\(callbackURL)"
-        get(endpoint) { (dict, error) in
+        get("\(crypto)/payment/\(callbackURL)") { (dict, error) in
             guard let dict = dict as? [String : String], error == nil else {
                 completion(nil, error)
                 return
             }
             
-            let requestData = try? JSONSerialization.data(withJSONObject: dict, options: [])
-            if let request = try? JSONDecoder().decode(PaymentRequest.self, from: requestData!) {
-                completion(request, nil)
-                return
+            if let requestData = try? JSONSerialization.data(withJSONObject: dict, options: []) {
+                if let request = try? JSONDecoder().decode(PaymentRequest.self, from: requestData) {
+                    completion(request, nil)
+                    return
+                }
             }
             
             completion(nil, error)
         }
     }
     
+    // TODO: From paymentRequest object
     static func getPaymentRequestQR(crypto: String, amount: Double, address: String, message: String?, size: CGSize?,
                                     completion: @escaping Callbacks.GetPaymentRequestQR) {
         
+        guard !address.isEmpty else {
+            completion(nil)
+            return
+        }
+        
         let size = (size != nil) ? "\(String(describing: size!.width))x\(String(describing: size!.height))" : "180x180"
         
-        var paymentURL = "ethereum:\(address)?amount=\(amount)"
-        if let message = message {
+        var paymentURL = "\(crypto):\(address)?amount=\(amount)"
+        if var message = message {
+            message = message.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
             paymentURL.append("&message=\(message)")
         }
         
         let url = "https://chart.googleapis.com/chart?chs=\(size)&cht=qr&chl=\(paymentURL)"
-        
         Alamofire.request(url, method: .get).response { (response) in
             if let data = response.data {
-                if let image = UIImage(data: data ) {
+                if let image = UIImage(data: data) {
                     completion(image)
+                    return
                 }
             }
             
             completion(nil)
         }
     }
-    
-    // MARK: - User
-    
-    static func login(email: String, password: String, twoFactorDelegate: TwoFactorAuthProtocol?,
-                      completion: @escaping Callbacks.LoginTokenResult) {
-        
-        let url = URL(string: "\(Constants.API_MEMBERS_BASE_URL)/auth/login")!
-        let parameters = ["email" : email, "password" : password]
-        
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
-            .responseJSON { (data) in
-                
-                guard let json = data.value as? [String : Any] else { completion(nil, nil); return }
-                
-                if let success = json["success"] as? Bool {
-                    if success {
-                        if let token = json["token"] as? String {
-                            // Store token for use in requests and notify listener of 2FA
-                            LoginHelper.shared.store(token: token)
-                            twoFactorDelegate?.paybearDidRequestTwoFactorAuthentication()
-                            
-                            completion(token, nil)
-                            return
-                        }
-                    } else {
-                        if let description = json["error"] as? String {
-                            completion(nil, error(description, code: -4))
-                            return
-                        }
-                    }
-                }
-                
-                completion(nil, data.error)
-        }
-    }
-    
-    static func loginTwoFactor(code: String, completion: @escaping Callbacks.LoginTwoFactorResult) {
-        guard let token = LoginHelper.shared.token else { completion(false); return }
-        
-        let url = URL(string: "\(Constants.API_MEMBERS_BASE_URL)/auth/login/token2fa")!
-        let parameters = ["code" : code]
-        let headers = ["authorization" : "JWT \(token)"]
-        
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
-            .responseJSON { (data) in
-                
-                guard let json = data.value as? [String : Any] else { completion(false); return }
-                
-                if let success = json["success"] as? Bool, let data = json["data"] as? Bool {
-                    if success && data {
-                        completion(true)
-                        return
-                    }
-                }
-                
-                completion(false)
-        }
-    }
-    
-    //    static func getUser(completion: @escaping Callbacks.UserResult) {
-    //        guard let token = LoginHelper.shared.token else { completion(nil, nil); return }
-    //
-    //        let url = URL(string: "\(Constants.API_MEMBERS_BASE_URL)/user")!
-    //        let headers = ["authorization" : "JWT \(token)"]
-    //
-    //        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
-    //            .responseJSON { (response) in
-    //
-    //                guard let json = response.value as? [String : Any] else { completion(nil, nil); return }
-    //
-    //                if let data = json["data"] as? [String : Any],
-    //                    let settings = data["chain_settings"] as? [String : Any] {
-    //                    var wallets: [Wallet] = []
-    //
-    //                    // Add all available cryptocurrencies
-    //                    settings.forEach({ (key, val) in
-    //                        let walletData = try? JSONSerialization.data(withJSONObject: val, options: [])
-    //                        if var wallet = try? JSONDecoder().decode(Wallet.self, from: walletData!) {
-    //                            wallet.name = key
-    //                            wallets.append(wallet)
-    //                        }
-    //                    })
-    //
-    //                    // Parse user object
-    //                    if let jsonData = try? JSONSerialization.data(withJSONObject: data, options: []) {
-    //                        if var user = try? JSONDecoder().decode(User.self, from: jsonData) {
-    //                            user.wallets = wallets
-    //
-    //                            // Assign/update current user
-    //                            LoginHelper.shared.user = user
-    //                            completion(user, nil)
-    //                        }
-    //                    }
-    //                }
-    //
-    //                completion(nil, response.error)
-    //        }
-    //    }
-    
-    //    static func enableCurrency(_ crypto: String, enable: Bool, address: String?, completion: @escaping Callbacks.EnableCurrencyResult) {
-    //        guard let token = LoginHelper.shared.token else { completion(false); return }
-    //
-    //        let url = URL(string: "\(Constants.API_MEMBERS_BASE_URL)/user/chainSettings/\(crypto)")!
-    //        let headers = ["authorization" : "JWT \(token)"]
-    //        var parameters: [String : Any]
-    //
-    //        if let address = address {
-    //            parameters = ["enabled" : enable, "current_payout" : address]
-    //        } else {
-    //            parameters = ["enabled" : enable]
-    //        }
-    //
-    //        Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
-    //            .response { (response) in
-    //
-    //                if let statusCode = response.response?.statusCode {
-    //                    if statusCode == 200 {
-    //                        completion(true)
-    //                        return
-    //                    }
-    //                }
-    //
-    //                completion(false)
-    //        }
-    //    }
 }
 
 // MARK: - Request Helpers
 
 extension Networking {
     
-    static func get(_ endpoint: String, completion: @escaping (_ data: Any?, _ error: Error?) -> ()) {
+    static func get(_ endpoint: String, needsAuth: Bool = true, completion: @escaping (_ data: Any?, _ error: Error?) -> ()) {
         var url = "\(Constants.currentBaseURL)/\(endpoint)"
         
-        if tokenExists() {
+        if tokenExists() && needsAuth {
             url.append("?token=\(Savvy.shared.token!)")
         }
         
@@ -284,18 +166,28 @@ extension Networking {
                 // Check for errors in response
                 if let error = error(inJSON: json) {
                     completion(nil, error)
-                    
-                } else if let dataContents = json["data"] as? [String : Any] {
+                }
+                else if let dataContents = json["data"] as? [String : Any] {
                     completion(dataContents, nil)
                 }
             case .failure(let error):
                 completion(nil, error)
-                print("\(NSStringFromSelector(#function)) error: \(error)")
+                debugPrint("\(NSStringFromSelector(#function)) error: \(error)")
             }
         }
     }
     
     // MARK: - Helpers
+    
+    static func tokenExists() -> Bool {
+        if let token = Savvy.shared.token {
+            if token.isEmpty == false {
+                return true
+            }
+        }
+        
+        return  false
+    }
     
     static func error(inJSON json: [String : Any]) -> Error? {
         if let success = json["success"] as? Bool {
@@ -311,17 +203,7 @@ extension Networking {
         return nil
     }
     
-    static func tokenExists() -> Bool {
-        if let token = Savvy.shared.token {
-            if token.isEmpty == false {
-                return true
-            }
-        }
-        
-        return  false
-    }
-    
     static func error(_ error: String, code: Int) -> NSError {
-        return  NSError(domain: "io.paybear.Paybear", code: code, userInfo: [NSLocalizedDescriptionKey : error])
+        return  NSError(domain: "io.savvy.Savvy", code: code, userInfo: [NSLocalizedDescriptionKey : error])
     }
 }

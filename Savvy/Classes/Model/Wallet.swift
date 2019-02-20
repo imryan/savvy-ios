@@ -1,6 +1,6 @@
 //
 //  Wallet.swift
-//  paybear-ios
+//  Savvy iOS
 //
 //  Created by Ryan Cohen on 3/2/18.
 //
@@ -9,7 +9,7 @@ import Foundation
 
 public struct Wallet: Codable {
     
-    // This class stores an enabled currency in the Paybear account chain.
+    // This class stores an enabled currency in the Savvy account chain.
     
     // MARK: - Attributes
     

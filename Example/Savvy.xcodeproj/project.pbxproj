@@ -13,7 +13,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		943B6FCD221DC50E001DEDCC /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B6FCC221DC50E001DEDCC /* Tests.swift */; };
-		FF41161F9F8E0DBE5A98811F /* Pods_Savvy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E726D40F77B966809AD6F8D9 /* Pods_Savvy_Example.framework */; };
+		AAEECE96A28F0F59277D3A63 /* Pods_Savvy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F870B801D33E972A304C6A5 /* Pods_Savvy_Example.framework */; };
+		BC37B16EF9A9A808BDA3BBD4 /* Pods_Savvy_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4B961E9F22F5AAC07DACBB /* Pods_Savvy_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E4B961E9F22F5AAC07DACBB /* Pods_Savvy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Savvy_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19936B54A56402627225F035 /* Pods-Savvy_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savvy_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example.release.xcconfig"; sourceTree = "<group>"; };
+		1F870B801D33E972A304C6A5 /* Pods_Savvy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Savvy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		263414B0E0104EE33AD9B36B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Savvy_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Savvy_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,10 +43,10 @@
 		943B6FCA221DC50D001DEDCC /* Savvy_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Savvy_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		943B6FCC221DC50E001DEDCC /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		943B6FCE221DC50E001DEDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A35ACFFC2738E2F8EE086432 /* Pods-Savvy_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savvy_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Savvy_Tests/Pods-Savvy_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		AEC98CB815B5321BB97C0F77 /* Pods-Savvy_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savvy_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Savvy_Tests/Pods-Savvy_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BBB3D68F28582618B3FC7ED9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		DC6887E428CE83E61C5C6372 /* Pods-Savvy_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savvy_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example.release.xcconfig"; sourceTree = "<group>"; };
-		E726D40F77B966809AD6F8D9 /* Pods_Savvy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Savvy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F81724FA6F25B220512C41CD /* Pods-Savvy_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savvy_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E53B7A6CDE32465BAB3A162F /* Pods-Savvy_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savvy_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF41161F9F8E0DBE5A98811F /* Pods_Savvy_Example.framework in Frameworks */,
+				AAEECE96A28F0F59277D3A63 /* Pods_Savvy_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,19 +62,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC37B16EF9A9A808BDA3BBD4 /* Pods_Savvy_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A496EC9EA1CC0BE659B2BDC /* Pods */ = {
+		098505B805966B887BECEDDD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F81724FA6F25B220512C41CD /* Pods-Savvy_Example.debug.xcconfig */,
-				DC6887E428CE83E61C5C6372 /* Pods-Savvy_Example.release.xcconfig */,
+				E53B7A6CDE32465BAB3A162F /* Pods-Savvy_Example.debug.xcconfig */,
+				19936B54A56402627225F035 /* Pods-Savvy_Example.release.xcconfig */,
+				A35ACFFC2738E2F8EE086432 /* Pods-Savvy_Tests.debug.xcconfig */,
+				AEC98CB815B5321BB97C0F77 /* Pods-Savvy_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		1A4FD82EFCEEF38AC9740AE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F870B801D33E972A304C6A5 /* Pods_Savvy_Example.framework */,
+				0E4B961E9F22F5AAC07DACBB /* Pods_Savvy_Tests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -80,8 +96,8 @@
 				607FACD21AFB9204008FA782 /* Example for Savvy */,
 				943B6FCB221DC50E001DEDCC /* Savvy_Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				2A496EC9EA1CC0BE659B2BDC /* Pods */,
-				7AB73B2B4338783646709FBA /* Frameworks */,
+				098505B805966B887BECEDDD /* Pods */,
+				1A4FD82EFCEEF38AC9740AE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,14 +142,6 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		7AB73B2B4338783646709FBA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E726D40F77B966809AD6F8D9 /* Pods_Savvy_Example.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		943B6FCB221DC50E001DEDCC /* Savvy_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,11 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Savvy_Example" */;
 			buildPhases = (
-				C15B6A1FF1CDF2980D110035 /* [CP] Check Pods Manifest.lock */,
+				C33AB1E5A8524CE5B5BABE92 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				8719639A3760E17753D7F8A1 /* [CP] Embed Pods Frameworks */,
+				C9C8C989F22048B80ADBC177 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 943B6FD3221DC50E001DEDCC /* Build configuration list for PBXNativeTarget "Savvy_Tests" */;
 			buildPhases = (
+				11D899F1391BE245512B89D0 /* [CP] Check Pods Manifest.lock */,
 				943B6FC6221DC50D001DEDCC /* Sources */,
 				943B6FC7221DC50D001DEDCC /* Frameworks */,
 				943B6FC8221DC50D001DEDCC /* Resources */,
+				E418B22F8F42A41401959A6A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,7 +200,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -246,7 +256,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8719639A3760E17753D7F8A1 /* [CP] Embed Pods Frameworks */ = {
+		11D899F1391BE245512B89D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Savvy_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C33AB1E5A8524CE5B5BABE92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Savvy_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9C8C989F22048B80ADBC177 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,7 +324,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Savvy_Example/Pods-Savvy_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C15B6A1FF1CDF2980D110035 /* [CP] Check Pods Manifest.lock */ = {
+		E418B22F8F42A41401959A6A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,18 +332,24 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Savvy_Tests/Pods-Savvy_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Savvy/Savvy.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Savvy_Example-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Savvy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Savvy_Tests/Pods-Savvy_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -354,12 +414,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -407,12 +469,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -443,7 +507,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F81724FA6F25B220512C41CD /* Pods-Savvy_Example.debug.xcconfig */;
+			baseConfigurationReference = E53B7A6CDE32465BAB3A162F /* Pods-Savvy_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -462,7 +526,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC6887E428CE83E61C5C6372 /* Pods-Savvy_Example.release.xcconfig */;
+			baseConfigurationReference = 19936B54A56402627225F035 /* Pods-Savvy_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -481,6 +545,7 @@
 		};
 		943B6FD1221DC50E001DEDCC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A35ACFFC2738E2F8EE086432 /* Pods-Savvy_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -504,7 +569,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "exposed.ryans.Savvy-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Savvy_Example.app/Savvy_Example";
 			};
@@ -512,6 +577,7 @@
 		};
 		943B6FD2221DC50E001DEDCC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEC98CB815B5321BB97C0F77 /* Pods-Savvy_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -532,7 +598,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "exposed.ryans.Savvy-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Savvy_Example.app/Savvy_Example";
 			};
