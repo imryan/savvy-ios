@@ -202,7 +202,7 @@ extension ViewController: UITableViewDataSource {
             return "Market Rates"
         }
         
-        return nil
+        return "Payment Requests"
     }
 }
 
