@@ -22,22 +22,14 @@ open class Savvy {
         
         var rawValue: String {
             switch self {
-            case .btc:
-                return "btc"
-            case .bch:
-                return "bch"
-            case .etc:
-                return "etc"
-            case .eth:
-                return "eth"
-            case .ltc:
-                return "ltc"
-            case .btg:
-                return "btg"
-            case .dash:
-                return "dash"
-            case .erc20(let symbol):
-                return "erc20:\(symbol)"
+            case .btc: return "btc"
+            case .bch: return "bch"
+            case .etc: return "etc"
+            case .eth: return "eth"
+            case .ltc: return "ltc"
+            case .btg: return "btg"
+            case .dash: return "dash"
+            case .erc20(let symbol): return "erc20:\(symbol)"
             }
         }
     }
@@ -91,7 +83,8 @@ open class Savvy {
     ///   - date: Optional parameter to get rate on specific date
     ///   - crypto: Cryptocurrency type
     ///   - completion: `Rate` object or an `Error`
-    open func getSingleMarketRate(fiat: String, date: Date? = nil, crypto: SavvyCryptoCurrencyType,
+    open func getSingleMarketRate(fiat: String, date: Date? = nil,
+                                  crypto: SavvyCryptoCurrencyType,
                                   completion: @escaping Callbacks.GetMarketRateSingle) {
         
         Networking.getSingleMarketRate(fiat: fiat, date: date, crypto: crypto.rawValue, completion: completion)
@@ -103,11 +96,15 @@ open class Savvy {
     /// - Parameters:
     ///   - crypto: Cryptocurrency to accept (eth, btc, bch, ltc, dash, btg, etc)
     ///   - callbackURL: Your server callback url (url encoded)
+    ///   - lockAddressTimeout: Time interval in seconds during which the address is locked for this invoice only. Pass ‑1 for infinite lock.
     ///   - completion: `PaymentRequest` object or an `Error`
     open func createPaymentRequest(crypto: SavvyCryptoCurrencyType,
-                                   callbackURL: String, completion: @escaping Callbacks.GetPaymentRequest) {
+                                   callbackURL: String,
+                                   lockAddressTimeout: Int? = nil,
+                                   completion: @escaping Callbacks.GetPaymentRequest) {
         
-        Networking.createPaymentRequest(crypto: crypto.rawValue, callbackURL: callbackURL, completion: completion)
+        Networking.createPaymentRequest(crypto: crypto.rawValue, lockAddressTimeout: lockAddressTimeout,
+                                        callbackURL: callbackURL, completion: completion)
     }
     
     /// Get QR code image for payment request
@@ -119,8 +116,10 @@ open class Savvy {
     ///   - message: Optional message
     ///   - size: Optional image size. Default is 180x180
     ///   - completion: `UIImage` representation of QR code
-    open func getPaymentRequestQR(crypto: SavvyCryptoCurrencyType, amount: Double, address: String,
-                                  message: String?, size: CGSize?, completion: @escaping Callbacks.GetPaymentRequestQR) {
+    open func getPaymentRequestQR(crypto: SavvyCryptoCurrencyType,
+                                  amount: Double, address: String,
+                                  message: String?, size: CGSize?,
+                                  completion: @escaping Callbacks.GetPaymentRequestQR) {
         
         Networking.getPaymentRequestQR(crypto: crypto.rawValue, amount: amount, address: address,
                                        message: message, size: size, completion: completion)

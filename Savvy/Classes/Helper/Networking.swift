@@ -91,13 +91,18 @@ class Networking {
         }
     }
 
-    static func createPaymentRequest(crypto: String, callbackURL: String, completion: @escaping Callbacks.GetPaymentRequest) {
+    static func createPaymentRequest(crypto: String, lockAddressTimeout: Int?, callbackURL: String, completion: @escaping Callbacks.GetPaymentRequest) {
         if !tokenExists() {
             completion(nil, error("Missing API key.", code: -1))
             return
         }
+        
+        var url: String = "\(crypto)/payment/\(callbackURL)"
+        if let lockAddressTimeout = lockAddressTimeout {
+            url.append("\(lockAddressTimeout)")
+        }
 
-        get("\(crypto)/payment/\(callbackURL)") { (dict, error) in
+        get(url) { (dict, error) in
             guard let dict = dict as? [String: String], error == nil else {
                 completion(nil, error)
                 return

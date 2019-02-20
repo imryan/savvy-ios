@@ -102,6 +102,20 @@ class Tests: QuickSpec {
                     })
                 }
             }
+            
+            describe("create a payment request with lock address timeout") {
+                it("should create a payment request with lock address timeout") {
+                    waitUntil(action: { (done) in
+                        Savvy.shared.createPaymentRequest(crypto: .btc, callbackURL: "", lockAddressTimeout: 86400, completion: { (request, error) in
+                            if let request = request, error == nil {
+                                expect(request.invoice).toNot(beNil())
+                                expect(request.address).toNot(beNil())
+                            }
+                            done()
+                        })
+                    })
+                }
+            }
         }
     }
 }
