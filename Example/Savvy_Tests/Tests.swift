@@ -21,8 +21,8 @@ class Tests: QuickSpec {
                                 expect(currency.code).toNot(beNil())
                                 expect(currency.rate).to(beGreaterThan(0.0))
                             }
-                            done()
                         }
+                        done()
                     }
                 })
             }
@@ -36,8 +36,25 @@ class Tests: QuickSpec {
                                     expect(rate.name).toNot(beNil())
                                     expect(rate.mid).to(beGreaterThan(0.0))
                                 }
-                                done()
                             }
+                            done()
+                        }
+                    })
+                }
+            }
+            
+            describe("fetch market rates on specific date") {
+                it("should get an array of Rate objects with attributes from a specific date.") {
+                    waitUntil(action: { (done) in
+                        let lastWeek = Date().addingTimeInterval(-604800)
+                        Savvy.shared.getMarketRates(fiat: "usd", date: lastWeek) { (rates, error) in
+                            if let rates = rates, error == nil {
+                                for rate in rates {
+                                    expect(rate.name).toNot(beNil())
+                                    expect(rate.mid).to(beGreaterThan(0.0))
+                                }
+                            }
+                            done()
                         }
                     })
                 }
@@ -48,10 +65,25 @@ class Tests: QuickSpec {
                     waitUntil(action: { (done) in
                         Savvy.shared.getSingleMarketRate(fiat: "usd", crypto: .btc, completion: { (rate, error) in
                             if let rate = rate, error == nil {
-                                //expect(rate.poloniex).toNot(beNil())
+                                expect(rate.name).toNot(beNil())
                                 expect(rate.mid).to(beGreaterThan(0.0))
-                                done()
                             }
+                            done()
+                        })
+                    })
+                }
+            }
+            
+            describe("fetch single market rate on specific date") {
+                it("should get an array of Rate objects with attributes from a specific date.") {
+                    waitUntil(action: { (done) in
+                        let lastWeek = Date().addingTimeInterval(-604800)
+                        Savvy.shared.getSingleMarketRate(fiat: "usd", date: lastWeek, crypto: .btc, completion: { (rate, error) in
+                            if let rate = rate, error == nil {
+                                expect(rate.name).toNot(beNil())
+                                expect(rate.mid).to(beGreaterThan(0.0))
+                            }
+                            done()
                         })
                     })
                 }
@@ -64,8 +96,8 @@ class Tests: QuickSpec {
                             if let request = request, error == nil {
                                 expect(request.invoice).toNot(beNil())
                                 expect(request.address).toNot(beNil())
-                                done()
                             }
+                            done()
                         })
                     })
                 }
