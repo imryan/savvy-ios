@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     
     private func setupSavvy() {
         Savvy.shared.shouldUseTestNet = true
-        Savvy.shared.setToken("tpub801c5d843605cb5f0e9b5e7ad64cc866")
+        Savvy.shared.setToken("")
     }
     
     private func fetchCurrencies() {

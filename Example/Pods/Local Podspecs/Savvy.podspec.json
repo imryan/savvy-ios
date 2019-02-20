@@ -1,8 +1,8 @@
 {
   "name": "Savvy",
   "version": "0.1.0",
-  "summary": "A short description of Savvy.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "Savvy API on iOS",
+  "description": "Utilize the Savvy cryptocurrency checkout API on iOS.",
   "homepage": "https://github.com/imryan/Savvy",
   "license": {
     "type": "MIT",
