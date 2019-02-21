@@ -25,6 +25,11 @@ pod 'Savvy'
 Savvy.shared.setToken("your-api-key")
 ```
 
+#### Enable test network
+```swift
+Savvy.shared.shouldUseTestNet = true
+```
+
 #### Get current market prices
 ```swift
 Savvy.shared.getCurrencies(completion: { (currencies, error) in
