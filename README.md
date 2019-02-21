@@ -9,6 +9,9 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+![](https://i.imgur.com/ZJQGoBS.png)
+![](https://i.imgur.com/iUOr9sR.png)
+
 ## Installation
 
 Savvy is available through [CocoaPods](https://cocoapods.org). To install
