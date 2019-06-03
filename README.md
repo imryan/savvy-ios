@@ -5,6 +5,11 @@
 [![License](https://img.shields.io/cocoapods/l/Savvy.svg?style=flat)](https://cocoapods.org/pods/Savvy)
 [![Platform](https://img.shields.io/cocoapods/p/Savvy.svg?style=flat)](https://cocoapods.org/pods/Savvy)
 
+
+## ⚠️ IMPORTANT
+
+* Savvy has been discontinued. This repo will no longer be active or function as expected.
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
